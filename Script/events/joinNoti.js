@@ -30,7 +30,7 @@ module.exports.run = async function ({ api, event, Users }) {
   try {
     const { threadID, author } = event;
 
-    /* ============ BOT JOIN ============ */
+    // ===== BOT JOIN =====
     if (event.logMessageData.addedParticipants.some(u => u.userFbId == api.getCurrentUserID())) {
       const prefix = global.config.PREFIX || "/";
       return api.sendMessage(
@@ -59,7 +59,7 @@ module.exports.run = async function ({ api, event, Users }) {
     let avatarStream = null;
     if (firstUser) avatarStream = await getAvatar(firstUser.userFbId);
 
-    /* ============ VIP ============ */
+    // ===== VIP =====
     if (isVIP) {
       const msg = `┌───👑────💎───┐
 │  𝐕𝐈𝐏 𝐀𝐑𝐑𝐈𝐕𝐀𝐋  │
@@ -70,19 +70,25 @@ module.exports.run = async function ({ api, event, Users }) {
 👤 নাম : ${names.join(", ")}
 
 ❤️ ধন্যবাদ আমাদের সাথে থাকার জন্য!`;
-      if (avatarStream) return api.sendMessage({ body: msg, mentions, attachment: avatarStream }, threadID);
-      else return api.sendMessage({ body: msg, mentions }, threadID);
+      if (avatarStream) {
+        return api.sendMessage({ body: msg, mentions, attachment: avatarStream }, threadID);
+      } else {
+        return api.sendMessage({ body: msg, mentions }, threadID);
+      }
     }
 
-    /* ============ NORMAL WELCOME - 6 NUMBER ============ */
+    // ===== NORMAL WELCOME - 6 NUMBER =====
     const msg = `Heyy 🌸
 👤 নাম : ${names.join(", ")}
 
 Welcome To Crazy Corner 💖
 অনেক অনেক ভালোবাসা রইলো তোমার জন্য 🌹`;
 
-    if (avatarStream) return api.sendMessage({ body: msg, mentions, attachment: avatarStream }, threadID);
-    else return api.sendMessage({ body: msg, mentions }, threadID);
+    if (avatarStream) {
+      return api.sendMessage({ body: msg, mentions, attachment: avatarStream }, threadID);
+    } else {
+      return api.sendMessage({ body: msg, mentions }, threadID);
+    }
 
   } catch (e) {
     console.log("JoinNoti Error:", e);
