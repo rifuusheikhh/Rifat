@@ -11,8 +11,6 @@ module.exports.config = {
   }
 };
 
-const fs = require("fs-extra");
-const path = require("path");
 const axios = require("axios");
 
 const VIP_UID = ["61596306493501"];
@@ -77,13 +75,12 @@ module.exports.run = async function ({ api, event, Users }) {
       else return api.sendMessage({ body: msg, mentions }, threadID);
     }
 
-    /* ============ NORMAL WELCOME - SUDHU EITAI ASBE ============ */
-    const msg = `Welcome To Crazy Corner 🌸
-
+    /* ============ NORMAL WELCOME - 6 NUMBER ============ */
+    const msg = `Heyy 🌸
 👤 নাম : ${names.join(", ")}
 
-আসসালামুয়ালাইকুম।
-আপনাকে আমাদের Crazy Corner গ্রুপে Wlc🌹`;
+Welcome To Crazy Corner 💖
+অনেক অনেক ভালোবাসা রইলো তোমার জন্য 🌹`;
 
     if (avatarStream) return api.sendMessage({ body: msg, mentions, attachment: avatarStream }, threadID);
     else return api.sendMessage({ body: msg, mentions }, threadID);
