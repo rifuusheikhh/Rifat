@@ -41,7 +41,6 @@ module.exports.run = async function ({ api, event, Users }) {
 🎀 তোমাদের মধ্যে চলে এসেছি আমি
 🎀 বিনোদন দিবো, কথা বলবো, মজা করবো
 
-💠 𝐏𝐫𝐞𝐟𝐢𝐱 : ${prefix}
 👑 𝐎𝐰𝐧𝐞𝐫 : Muhammad Rifat Sheikh
 
 ━━━━━━━━━━━━━━━━━━
