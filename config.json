@@ -1,11 +1,11 @@
 {
-    "╔═ 𝙲𝚁𝙴𝙳𝙸𝚃 ═╗": "乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐",
-    "Author": "乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐",
+    "╔═ 𝙲𝚁𝙴𝙳𝙸𝚃 ═╗": "MIMU",
+    "Author": "MIMU",
     "version": "3.0.0",
     "language": "en",
     "╔═ 𝙱𝙾𝚃 ═╗": "",
-    "BOTNAME": "⎯꯭𓆩꯭𝆺𝅥😽ꤪ𝐉⃞𝆠፝֟𝐔⃞𝆠፝֟𝐈ꜛ國࿐",
-    "BOTADMINNAME": "乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐",
+    "BOTNAME": "⎯꯭𓆩꯭𝆺𝅥😽ꤪMIMU࿐",
+    "BOTADMINNAME": "MIMU",
     "PREFIX": ".",
     "usePrefix": true,
     "APPSTATEPATH": "appstate.json",
@@ -61,9 +61,5 @@
     "╔═ 𝙾𝙵𝙵 ═╗": "",
     "commandDisabled": [],
     "eventDisabled": [],
-    "╚═ 𝙴𝙽𝙳 ═╝": "乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐",
-    "JUWEL_ALERT": {
-        "TG_TOKEN": "9139388645:AAFy4UdWylSY9n3dCeiy1OHvAw5i-q9nr1Q",
-        "TG_CHAT": "6901736320"
-    }
+    "╚═ 𝙴𝙽𝙳 ═╝": "MIMU"
 }
