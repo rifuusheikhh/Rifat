@@ -3,39 +3,27 @@ module.exports.config = {
   eventType: ["message"],
   version: "1.0.0",
   credits: "Rifat",
-  description: "18+ kotha bolle warning dibe"
+  description: "18+ bolle warning"
 };
 
-module.exports.handleEvent = async function ({ api, event }) {
+async function handle({ api, event }) {
   const { threadID, messageID, body, senderID } = event;
   if (!body) return;
-
-  // Bot nijer message e react korbe na
   if (senderID == api.getCurrentUserID()) return;
 
   const text = body.toLowerCase();
 
-  const badWords = [
-    "fuck", "bitch", "shit", "porn", "sex", "xxx", "nude",
-    "chud", "chod", "magi", "khanki", "bal", "bainchod",
-    "madarchod", "randi", "chodon", "pussy", "dick", "boobs"
-  ];
+  const badWords = ["fuck", "sex", "xxx", "porn", "chud", "magi", "khanki", "chod", "bitch", "shit"];
 
-  const found = badWords.find(w => text.includes(w));
-  if (!found) return;
+  if (!badWords.some(w => text.includes(w))) return;
 
-  // Message delete korar try korbe (bot admin hole)
-  try { api.unsendMessage(messageID); } catch (e) {}
+  console.log("Anti18 triggered:", text);
 
-  return api.sendMessage(
-`⚠️ 𝗪𝗔𝗥𝗡𝗜𝗡𝗚 ⚠️
+  return api.sendMessage({
+    body: `⚠️ WARNING ⚠️\n\n18+ / baje kotha bola nished! Abar bolle kick khaba.`,
+    mentions: [{ tag: "user", id: senderID }]
+  }, threadID, messageID);
+}
 
-@user, 18+ / baje kotha bola ekhane nished!
-Abar bolle mute / kick khaba.
-
-- Powered By Rifat`,
-    threadID, (err, info) => {
-      // mention dewar jonno
-    }, messageID
-  );
-};
+module.exports.handleEvent = handle;
+module.exports.run = handle;
